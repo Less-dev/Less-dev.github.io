@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif; /* Fuente por defecto */
+    background-color: #0D1117;
+    color: #C9D1D9;
+}
+  
+a {
+    color: #58A6FF;
+}
+  
+header, footer, nav {
+    background-color: #161B22;
+    border-color: #30363D;
+}
+  
+
+a.buttons_default{
+    background: linear-gradient(to right,#196BCA ,#000000);
+    background-color: #196BCA;
+    color: #fff;
+    font-family: Courier;
+    font-size: 21px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 14px 15px;
+    border: 2px solid #000;
+    border-radius: 36px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+   }
+   a.buttons_default span{
+    margin-right: 15px;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAApdJREFUeF7tmlFOwlAQRV/BDZiIkT+WIjvRlRhXwlJkJ/JHNDFuQFpTpLFpgrwWOmcmXj9NyZ05h1voC0XSH0qgQNMVniQAfhNIgATABOB4NUACYAJwvBogATABOF4NkACYAByvBkgATACOVwMkACYAx6sBEgATgOPVAAmACcDxaoAEwATgeDVAAmACcLwaIAEwATheDZAAmAAcrwZIAEwAjlcDJAAmAMerAf9NwHb7uZhMy6dyN3mez6838P77+HqmYlq+VLvJ0nom0wb8LLpbpVTcp5Q2xMJd4Qf4r4f/m89kJqADv+FgvnBbQAc+MpOJgCPwkYWb0CPwzWcaXcAJ+OYLt+75zW3n2MeQSTtHF/D2/rGqUnrI+LA1WfjEO78zZrW+u71ZZsw++JLRBTTfMFJKi4wpR5XQD37aVEX5OJ/N1hlzD75kdAHtr3mkBI/wazYmAmgJXuGbCqAkeIZvLsBagnf4iAArCRHgYwLGlhAFPipgLAmR4OMCLi0hGnwXAi4lISJ8NwLOlRAVvisBQyXsl5iWpw7Wfg/9DI4X+pxLmD0J5w7V9+wo83ijjjc528nds7nOnYABTcjZ2SV8d7egNsmeTfhLglv4rgVcqAmu4bsXcKYE9/BDCBgoIQT8MAJ6SggDP5SATAmh4IcTcEJCOPghBRyREBJ+WAEdCcni1ws5T3tDrnH5JJy7SP2wlq6+FmP/dCR3niHXhRYwZGFvr5EA2IgESABMAI5XAyQAJgDHqwESABOA49UACYAJwPFqgATABOB4NUACYAJwvBogATABOF4NkACYAByvBkgATACOVwMkACYAx6sBEgATgOPVAAmACcDxaoAEwATgeDVAAmACcLwaIAEwATheDZAAmAAc/w1t36Rw29bGRAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(0deg);
+   }
+   a.buttons_default:hover{
+    background: linear-gradient(to right,#5482d0 ,#515151);
+    background-color: #5482d0;
+   }
+   a.buttons_default:active{
+    transform: scale(0.95);
+   }
