@@ -18,7 +18,7 @@
 </p>
 
 
-1. [`TECHNICAL SPECIFICATIONS`](#technical-specifications)
+1. [`TECHNICAL SPECIFICATIONS`](#technical-specification)
    
    1.1 [Technologies](#-tecnologías)
 
