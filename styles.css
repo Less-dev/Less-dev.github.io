@@ -9,22 +9,40 @@ body {
     border-radius: 20px; /* Esquinas redondeadas */
     border: 2px solid #ffffffaf; /* Bordes blancos */
     margin: 20px; /* Margen exterior */
+    position: relative; /* Posición relativa para contener los menús */
 }
-  
-  
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Espacio entre el menú y el contenido */
+}
+
+.top-left-menu a,
+.top-right-menu a {
+    text-decoration: none;
+    color: #e0e0e0; /* Cambia el color según tu preferencia */
+    font-weight: bold;
+}
+
+.top-left-menu a {
+    margin-right: 15px;
+}
+
+.top-right-menu a {
+    margin-left: 15px;
+}
 
 .portfolio-description {
     font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-        color: #e0e0e0; /* Gris claro similar al color de ChatGPT */
-        padding: 20px;
-        font-weight:bold;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    
+    color: #e0e0e0; /* Gris claro similar al color de ChatGPT */
+    padding: 20px;
+    font-weight:bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
   
-
-a.buttons_default{
+a.buttons_default {
     background: linear-gradient(to right,#196BCA ,#000000);
     background-color: #196BCA;
     color: #fff;
@@ -39,8 +57,8 @@ a.buttons_default{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-   }
-   a.buttons_default span{
+}
+a.buttons_default span {
     margin-right: 15px;
     display: block;
     width: 29px;
@@ -49,15 +67,14 @@ a.buttons_default{
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(0deg);
-   }
-   a.buttons_default:hover{
+}
+a.buttons_default:hover {
     background: linear-gradient(to right,#5482d0 ,#515151);
     background-color: #5482d0;
-   }
-   a.buttons_default:active{
+}
+a.buttons_default:active {
     transform: scale(0.95);
-   }
-
+}
 
 footer {
     position: fixed;
