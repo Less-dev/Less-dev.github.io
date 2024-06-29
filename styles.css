@@ -12,6 +12,16 @@ header, footer, nav {
     background-color: #161B22;
     border-color: #30363D;
 }
+
+.portfolio-description {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+        color: #e0e0e0; /* Gris claro similar al color de ChatGPT */
+        padding: 20px;
+        font-weight:bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    
+}
   
 
 a.buttons_default{
