@@ -155,3 +155,28 @@ footer a {
     margin-right: auto;
     transition: width 0.3s ease;
 }
+
+
+.box-likes {
+    border: 2px solid #ffffff; /* Color blanco para los bordes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    background: none; /* Sin fondo */
+    width: 300px; /* Ancho inicial del cuadro */
+    position: relative; /* Posición absoluta para ubicación */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la derecha */
+    text-align: center; /* Centrar contenido texto horizontalmente */
+    max-width: 90%; /* Ancho máximo relativo al contenedor */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+@media (max-width: 768px) {
+    .box-likes {
+        
+        width: 100px; /* Achica el ancho al 90% del contenedor padre */
+        height: auto;
+        max-width: none; /* Elimina el ancho máximo para ajuste fluido */
+        right: 5px; /* Ajuste de posición para pantallas pequeñas */
+    }
+}
