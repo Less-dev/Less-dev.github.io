@@ -13,28 +13,6 @@ body {
 }
 
 
-.projects {
-    width: calc(33.33% - 20px); /* Calcula el ancho de cada proyecto (33.33% del contenedor menos espacios entre ellos) */
-    margin-right: 20px; /* Espacio entre proyectos */
-    margin-bottom: 20px; /* Espacio debajo de los proyectos */
-    display: inline-block; /* Hace que los proyectos se muestren en línea */
-    vertical-align: top; /* Alinea los proyectos en la parte superior */
-    box-sizing: border-box; /* Incluye el padding y border dentro del ancho y alto */
-}
-
-@media (max-width: 768px) {
-    .projects {
-        width: calc(50% - 20px); /* Cambia a 50% de ancho en pantallas más pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .projects {
-        width: 100%; /* Ocupa el ancho completo en pantallas muy pequeñas */
-        margin-right: 0; /* Quita el margen derecho para que no haya espacio adicional */
-    }
-}
-
 
 .menu-container {
     display: flex;
@@ -114,8 +92,51 @@ footer a {
     text-decoration: none;
 }
 
+.projects {
+    width: 300px;
+    height: 250px;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden; /* Para asegurar que la imagen se ajuste al cuadro */
+    margin: auto; /* Centra el cuadro horizontalmente */
+    position: relative; /* Permite posicionar la imagen dentro del cuadro */
+}
+
+
 .projects img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta la imagen dentro del cuadro sin distorsionar */
+}
+
+
+@media (max-width: 768px) {
+    .projects {
+        width: calc(50% - 20px); /* 50% del ancho menos el margen */
+        max-width: 100%; /* Asegura que se ajuste al tamaño del contenedor */
+        margin: 10px; /* Espacio entre los elementos */
+    }
+    
+    .box {
+        justify-content: center; /* Centra los elementos hijos horizontalmente */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .projects {
+        width: calc(50% - 20px); /* 50% del ancho menos el margen */
+        max-width: 100%; /* Asegura que se ajuste al tamaño del contenedor */
+        margin: 10px; /* Espacio entre los elementos */
+    }
+
+    .box > div {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
+        justify-content: center;
+        .projects {
+            width: 500px;
+            height: 300px;
+        }
+    }
 }
