@@ -138,6 +138,10 @@ footer a {
             width: 500px;
             height: 300px;
         }
+
+        .responsive-image {
+            width: 70%; /* Reduce el tamaño de la imagen al 70% de su tamaño original */
+        }
     }
 }
 
@@ -148,4 +152,5 @@ footer a {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: width 0.3s ease;
 }
