@@ -140,7 +140,7 @@ footer a {
         }
 
         .responsive-image {
-            width: 70%; /* Reduce el tamaño de la imagen al 70% de su tamaño original */
+            width: 80%; /* Reduce el tamaño de la imagen al 70% de su tamaño original */
         }
     }
 }
