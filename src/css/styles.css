@@ -16,6 +16,7 @@ body {
 
 
 
+/* Estilos principales */
 .menu-container {
     display: flex;
     justify-content: space-between;
@@ -36,6 +37,38 @@ body {
 .top-right-menu a {
     margin-left: 15px;
 }
+
+.top-left-menu a:hover,
+.top-right-menu a:hover,
+.top-left-menu a:focus,
+.top-right-menu a:focus {
+    color: #aa0000; /* Color de enlace al pasar el cursor o enfocar */
+    text-decoration: underline; /* Subrayado al pasar el cursor o enfocar */
+}
+
+/* Estilos responsivos */
+@media (max-width: 510px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-left-menu,
+    .top-right-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: 100%;
+    }
+
+    .top-left-menu a,
+    .top-right-menu a {
+        margin: 8px 0; /* Espaciado vertical */
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+}
+
+
 
 .portfolio-description {
     font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
