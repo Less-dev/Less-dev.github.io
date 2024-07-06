@@ -7,10 +7,12 @@ body {
 .box {
     padding: 20px;
     border-radius: 20px; /* Esquinas redondeadas */
-    border: 3.4px solid rgb(143, 12, 12); /* Bordes blancos */
+    border: 3.4px solid rgb(143, 12, 12); /* Bordes rojos */
     margin: 20px; /* Margen exterior */
     position: relative; /* Posición relativa para contener los menús */
     box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.603);
+    overflow: hidden; /* Evita que el contenido se desborde */
+    background-color: #fff; /* Color de fondo blanco */
 }
 
 
@@ -177,20 +179,59 @@ footer a {
 
 
 
+.container_row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+    gap: 10px; /* Espacio entre elementos */
+}
+
 .container-type {
     display: inline-block;
     border: 2px solid #ffffff; /* Color blanco para los bordes */
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px;
     box-sizing: border-box;
-  }
-
-.container_row {
-    display: flex;
-    align-items: center; /* Alinea los elementos verticalmente al centro */
-    justify-content: space-between; /* Espacia los elementos uniformemente */
+    width: 100%;
+    max-width: 600px; /* Ancho máximo del contenedor */
+    flex: 1; /* Permite que el contenedor se ajuste dinámicamente */
 }
 
-.container-type, p {
-    margin: 10px; /* Añade margen alrededor de los elementos */
+.typing_img {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+p {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px; /* Ancho mínimo para el párrafo */
+}
+
+@media (max-width: 600px) {
+    .container_row {
+        flex-direction: column; /* Apila los elementos verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra los elementos en pantallas pequeñas */
+    }
+
+    .container-type, p {
+        max-width: 100%; /* Asegura que los elementos no se desborden */
+    }
+
+    .typing_img {
+        width: 80%; /* Reduce el ancho de la imagen al 80% del contenedor */
+    }
+}
+
+@media (max-width: 400px) {
+    .typing_img {
+        width: 60%; /* Reduce el ancho de la imagen al 60% del contenedor */
+    }
+}
+
+@media (max-width: 300px) {
+    .typing_img {
+        width: 40%; /* Reduce el ancho de la imagen al 50% del contenedor */
+    }
 }
