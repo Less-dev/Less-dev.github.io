@@ -158,16 +158,10 @@ footer a {
 
 
 .box-likes {
-    border: 2px solid #ffffff; /* Color blanco para los bordes */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno */
     background: none; /* Sin fondo */
     width: 300px; /* Ancho inicial del cuadro */
     position: relative; /* Posición absoluta para ubicación */
-    top: 20px; /* Distancia desde la parte superior */
-    right: 20px; /* Distancia desde la derecha */
-    text-align: center; /* Centrar contenido texto horizontalmente */
-    max-width: 90%; /* Ancho máximo relativo al contenedor */
+    max-width: 100%; /* Ancho máximo relativo al contenedor */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
@@ -180,3 +174,13 @@ footer a {
         right: 5px; /* Ajuste de posición para pantallas pequeñas */
     }
 }
+
+
+
+.container-type {
+    display: inline-block;
+    border: 2px solid #ffffff; /* Color blanco para los bordes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    box-sizing: border-box;
+  }
