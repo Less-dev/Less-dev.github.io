@@ -4,6 +4,19 @@ body {
     color: #C9D1D9;
 }
 
+
+.box_index {
+    padding: 20px;
+    border-radius: 20px; /* Esquinas redondeadas */
+    border: 3.4px solid rgb(143, 12, 12); /* Bordes rojos */
+    margin: 20px; /* Margen exterior */
+    position: relative; /* Posición relativa para contener los menús */
+    box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.603);
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+
+
 .box {
     padding: 20px;
     border-radius: 20px; /* Esquinas redondeadas */
@@ -280,3 +293,31 @@ p {
 
 }
   
+
+
+.byAuthor {
+    padding: 20px;
+}
+
+@media (max-width: 603px) {
+    .byAuthor {
+        padding-top: 40px;
+
+    }
+}
+
+
+@media (max-width: 435px) {
+    .byAuthor {
+        padding-top: 60px;
+
+    }
+}
+
+
+@media (max-width: 400px) {
+    .byAuthor {
+        padding-top: 80px;
+
+    }
+}
