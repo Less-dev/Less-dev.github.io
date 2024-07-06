@@ -184,3 +184,12 @@ footer a {
     padding: 10px;
     box-sizing: border-box;
   }
+
+.container_row {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+}
+.container-type, p {
+    margin: 10px; /* Añade margen alrededor de los elementos */
+}
