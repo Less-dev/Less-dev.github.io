@@ -159,26 +159,6 @@ footer a {
 
 
 
-.box-likes {
-    background: none; /* Sin fondo */
-    width: 300px; /* Ancho inicial del cuadro */
-    position: relative; /* Posición absoluta para ubicación */
-    max-width: 100%; /* Ancho máximo relativo al contenedor */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-
-@media (max-width: 768px) {
-    .box-likes {
-        
-        width: 100px; /* Achica el ancho al 90% del contenedor padre */
-        height: auto;
-        max-width: none; /* Elimina el ancho máximo para ajuste fluido */
-        right: 5px; /* Ajuste de posición para pantallas pequeñas */
-    }
-}
-
-
 
 .container_row {
     display: flex;
@@ -240,4 +220,20 @@ p {
     .typing_img {
         width: 40%; /* Reduce el ancho de la imagen al 50% del contenedor */
     }
+}
+
+.image_profile {
+    height: 210px;
+    width: 185px;
+    border-radius: 10px; /* Bordes redondos */
+    object-fit: cover; /* Ajusta la imagen para que llene el contenedor */
+}
+
+
+.profile_container {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna, uno debajo del otro */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    position: relative;
 }
