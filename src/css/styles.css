@@ -159,6 +159,7 @@ footer a {
 }
 
 
+
 .box-likes {
     background: none; /* Sin fondo */
     width: 300px; /* Ancho inicial del cuadro */
@@ -166,6 +167,7 @@ footer a {
     max-width: 100%; /* Ancho máximo relativo al contenedor */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
+
 
 @media (max-width: 768px) {
     .box-likes {
@@ -187,6 +189,7 @@ footer a {
     gap: 10px; /* Espacio entre elementos */
 }
 
+
 .container-type {
     display: inline-block;
     border: 2px solid #ffffff; /* Color blanco para los bordes */
@@ -198,16 +201,20 @@ footer a {
     flex: 1; /* Permite que el contenedor se ajuste dinámicamente */
 }
 
+
 .typing_img {
     max-width: 100%; /* Asegura que la imagen no se desborde */
     height: auto; /* Mantiene la proporción de la imagen */
 }
+
 
 p {
     flex: 1;
     margin: 10px;
     min-width: 200px; /* Ancho mínimo para el párrafo */
 }
+
+
 
 @media (max-width: 600px) {
     .container_row {
