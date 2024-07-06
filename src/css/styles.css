@@ -225,7 +225,7 @@ p {
 .image_profile {
     height: 210px;
     width: 185px;
-    border-radius: 10px; /* Bordes redondos */
+    border-radius: 15px; /* Bordes redondos */
     object-fit: cover; /* Ajusta la imagen para que llene el contenedor */
 }
 
@@ -237,3 +237,13 @@ p {
     text-align: center; /* Centra el texto horizontalmente */
     position: relative;
 }
+
+.description_me {
+    font-size: 20px;
+    color: lightgray;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+
+}
+  
