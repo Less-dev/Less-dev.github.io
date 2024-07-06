@@ -190,6 +190,7 @@ footer a {
     align-items: center; /* Alinea los elementos verticalmente al centro */
     justify-content: space-between; /* Espacia los elementos uniformemente */
 }
+
 .container-type, p {
     margin: 10px; /* Añade margen alrededor de los elementos */
 }
