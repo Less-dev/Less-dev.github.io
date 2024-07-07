@@ -143,17 +143,25 @@ footer a {
 .projects {
     width: 300px;
     height: 250px;
-    border: 2px solid white;
+    border: 2px solid rgb(78, 0, 0); /* Bordes rojos */
+    box-shadow: 0px 0px 10px rgba(128, 0, 128, 0.6); /* Sombra morada */
     border-radius: 10px;
     overflow: hidden; /* Para asegurar que la imagen se ajuste al cuadro */
     margin: auto; /* Centra el cuadro horizontalmente */
     position: relative; /* Permite posicionar la imagen dentro del cuadro */
+    display: flex; /* Activar Flexbox */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
 }
 
+.projects h3 {
+    text-align: center;
+    margin: 10px 0; /* Añadir un margen para separar el título de la imagen */
+}
 
 .projects img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     object-fit: cover; /* Ajusta la imagen dentro del cuadro sin distorsionar */
 }
 
