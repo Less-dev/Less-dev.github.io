@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+      <title>Contacts</title>
+
+      <link rel="stylesheet" href="../css/styles.css">
+      <link rel="stylesheet" media="all" href="../css/background.css" />
+      <link rel="icon" href="../assets/logo.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="container">
+    
+      <div id="background-container"></div>
+      <script src="../js/scripts.js"></script>
+
+    <div class="box">
+
+      <div class="back_page">
+        <a href="../../index.html">
+          <img src="../assets/arrow_back_ic.png" alt="Icon">
+      </a>
+        <h3>Contact Me</h3>
+      </div>
+      
+        <br>
+
+        <div class="container_social">
+          <div class="social">
+              <h3> Facebook</h3>
+              <a href="https://www.facebook.com/profile.php?id=61561662639531" target="_blank">
+                <img src="https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif">
+              </a>
+          </div>
+
+          <div class="social">
+
+            <h3>Telegram</h3>
+            <br>
+
+            <a href="https://t.me/LessGithub"  target="_blank">
+              <img src="https://holatelcel.com/wp-content/uploads/2021/10/logo-telegram-animado.gif">
+            </a>
+
+          </div>
+          <div class="social">
+
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/lessdev/" target="_blank">
+              <img src="https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif">
+            </a>
+
+          </div>
+          <div class="social">
+
+            <h3>Email</h3>
+            <a href="mailto:less.github@gmail.com" target="_blank">
+              <img src="https://github.com/Less-dev/Less-dev/assets/166412593/985ee0d7-ae8d-40f2-906e-07c81b2d72b1">
+            </a>
+
+          </div>
+
+          
+          <div class="social">
+            <h3>Github</h3>
+            <a href="https://github.com/Less-dev" target="_blank">
+              <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif">
+            </a>
+          </div>
+
+          <div class="social">
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/qr/XR4TPL56Z6JAL1" target="_blank">
+              <img src="https://user-images.githubusercontent.com/74038190/235294019-40007353-6219-4ec5-b661-b3c35136dd0b.gif">
+            </a>
+          </div>
+
+          <div class="social">
+            <h3>Youtube</h3>
+            <a href="https://www.youtube.com/channel/UCTfU-oSr3JrjtxKslcR2Weg" target="_blank">
+              <img src="https://user-images.githubusercontent.com/74038190/235294007-de441046-823e-4eff-89bf-d4df52858b65.gif">
+            </a>
+          </div>
+
+      </div>
+        
+        <footer>
+            <p>by: <a href="https://github.com/Less-dev" target="_blank">Less</a></p>
+        </footer>
+
+    </div>
+    
+    <script src="../js/scripts.js"></script>
+
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const socials = document.querySelectorAll('.social');
+          const container = document.querySelector('.container_social');
+  
+          socials.forEach(social => {
+              social.style.left = Math.random() * (container.clientWidth - social.clientWidth) + 'px';
+              social.style.top = Math.random() * (container.clientHeight - social.clientHeight) + 'px';
+  
+              let speedX = Math.random() * 4 + 1;
+              let speedY = Math.random() * 4 + 1;
+              const friction = 1; // Ajustar a 1 para mantener velocidad constante
+              const bounceFactor = 1.1; // Factor de rebote
+  
+              function animate() {
+                  const rect = social.getBoundingClientRect();
+                  const containerRect = container.getBoundingClientRect();
+  
+                  if (rect.left <= containerRect.left) {
+                      speedX = Math.abs(speedX) * bounceFactor;
+                  } else if (rect.right >= containerRect.right) {
+                      speedX = -Math.abs(speedX) * bounceFactor;
+                  }
+  
+                  if (rect.top <= containerRect.top) {
+                      speedY = Math.abs(speedY) * bounceFactor;
+                  } else if (rect.bottom >= containerRect.bottom) {
+                      speedY = -Math.abs(speedY) * bounceFactor;
+                  }
+  
+                  social.style.left = social.offsetLeft + speedX + 'px';
+                  social.style.top = social.offsetTop + speedY + 'px';
+  
+                  // Aplicar fricción (opcional)
+                  speedX *= friction;
+                  speedY *= friction;
+  
+                  requestAnimationFrame(animate);
+              }
+  
+              animate();
+          });
+      });
+  </script>
+  
+      
+  </body>
+</html>
