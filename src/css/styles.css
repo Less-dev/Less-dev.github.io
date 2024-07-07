@@ -446,9 +446,9 @@ p {
 }
 
 .container_images_projects img {
-    height: 250px;
-    width: 150px;
-    border-radius: 20px;
+    height: 295px;
+    width: 195px;
+    border-radius: 15px;
 }
 
 @media (max-width: 510px) {
