@@ -422,5 +422,12 @@ p {
 
 }
 
+.source_code {
+    color: #e0e0e0;
+    font-weight: 900;
+}
 
-
+.source_code:hover {
+    font-weight: 900;
+    color: rgb(214, 96, 0); /* Cambia el color a morado cuando el cursor está sobre el enlace */
+}
