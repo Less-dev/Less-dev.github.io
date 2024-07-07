@@ -381,6 +381,7 @@ p {
     }
 }
 
+
 .social img {
     width: 100%;
     height: auto; /* Ajusta la altura automáticamente */
@@ -389,4 +390,6 @@ p {
     margin-top: 10px; /* Añade un margen superior para separar del texto */
     object-fit: contain; /* Ajusta la imagen sin recortarla */
 }
+
+
 
