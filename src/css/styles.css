@@ -433,3 +433,27 @@ p {
     font-weight: 900;
     color: rgb(214, 96, 0); /* Cambia el color a morado cuando el cursor está sobre el enlace */
 }
+
+
+.container_images_projects {
+    height: 340px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.container_images_projects img {
+    height: 250px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+@media (max-width: 510px) {
+    .container_images_projects img {
+        height: 400px;
+        width: 355px;
+    }
+}
