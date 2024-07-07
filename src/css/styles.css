@@ -321,3 +321,25 @@ p {
 
     }
 }
+
+
+.back_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.back_page a {
+    position: absolute;
+    left: 0;
+}
+
+.back_page img {
+    width: 30px;
+    height: 30px;
+}
+
+.back_page h3 {
+    margin: 0 auto;
+}
