@@ -96,51 +96,59 @@
     <script src="../js/scripts.js"></script>
 
     </div>
+    
     <script>
       document.addEventListener("DOMContentLoaded", function() {
           const socials = document.querySelectorAll('.social');
           const container = document.querySelector('.container_social');
-  
+          const containerRect = container.getBoundingClientRect();
+      
+          const maxSpeed = 5; // Velocidad constante deseada
+      
           socials.forEach(social => {
-              social.style.left = Math.random() * (container.clientWidth - social.clientWidth) + 'px';
-              social.style.top = Math.random() * (container.clientHeight - social.clientHeight) + 'px';
-  
-              let speedX = Math.random() * 4 + 1;
-              let speedY = Math.random() * 4 + 1;
-              const friction = 1; // Ajustar a 1 para mantener velocidad constante
-              const bounceFactor = 1.1; // Factor de rebote
-  
+              social.style.left = Math.random() * (containerRect.width - social.clientWidth) + 'px';
+              social.style.top = Math.random() * (containerRect.height - social.clientHeight) + 'px';
+      
+              let speedX = (Math.random() * 2 - 1) * maxSpeed;
+              let speedY = (Math.random() * 2 - 1) * maxSpeed;
+      
+              function normalizeSpeed() {
+                  const speed = Math.sqrt(speedX * speedX + speedY * speedY);
+                  if (speed > maxSpeed) {
+                      speedX = (speedX / speed) * maxSpeed;
+                      speedY = (speedY / speed) * maxSpeed;
+                  }
+              }
+      
               function animate() {
                   const rect = social.getBoundingClientRect();
-                  const containerRect = container.getBoundingClientRect();
-  
+      
                   if (rect.left <= containerRect.left) {
-                      speedX = Math.abs(speedX) * bounceFactor;
+                      speedX = Math.abs(speedX);
                   } else if (rect.right >= containerRect.right) {
-                      speedX = -Math.abs(speedX) * bounceFactor;
+                      speedX = -Math.abs(speedX);
                   }
-  
+      
                   if (rect.top <= containerRect.top) {
-                      speedY = Math.abs(speedY) * bounceFactor;
+                      speedY = Math.abs(speedY);
                   } else if (rect.bottom >= containerRect.bottom) {
-                      speedY = -Math.abs(speedY) * bounceFactor;
+                      speedY = -Math.abs(speedY);
                   }
-  
+      
                   social.style.left = social.offsetLeft + speedX + 'px';
                   social.style.top = social.offsetTop + speedY + 'px';
-  
-                  // Aplicar fricción (opcional)
-                  speedX *= friction;
-                  speedY *= friction;
-  
+      
+                  normalizeSpeed(); // Normalizar la velocidad en cada cuadro
+      
                   requestAnimationFrame(animate);
               }
-  
+      
+              normalizeSpeed(); // Asegurarse de que la velocidad esté normalizada al inicio
               animate();
           });
       });
-  </script>
-  
+      </script>
+      
       
   </body>
 </html>
