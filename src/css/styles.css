@@ -457,3 +457,12 @@ p {
         width: 355px;
     }
 }
+
+
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+}
