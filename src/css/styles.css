@@ -240,9 +240,21 @@ footer a {
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
-    max-width: 600px; /* Ancho máximo del contenedor */
+    max-width: 300px; /* Ancho máximo del contenedor */
     flex: 1; /* Permite que el contenedor se ajuste dinámicamente */
 }
+
+.container-descriptions {
+    display: inline-block;
+    border: 2px solid #ffffff; /* Color blanco para los bordes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo del contenedor */
+    flex: 1; /* Permite que el contenedor se ajuste dinámicamente */
+}
+
 
 
 .typing_img {
