@@ -372,20 +372,15 @@ p {
     margin: 0 auto;
 }
 
+.container_contactme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Añade un espacio entre los elementos */
+    padding: 20px;
+  }
 
-.container_social {
-    width: 100%;
-    height: 100vh; /* Para que el contenedor ocupe toda la altura de la pantalla */
-    border-radius: 15px;
-    background: none;
-    margin: 0 auto; /* Centra horizontalmente */
-    padding: 10px; /* Espacio interno para los elementos */
-    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
-    position: relative; /* Asegura que los hijos con posición absoluta se posicionen respecto a este contenedor */
-    overflow: hidden; /* Oculta cualquier parte de los elementos que se salga del contenedor */
-}
-
-.social {
+  .social {
     width: 150px;
     height: 150px;
     border: 2px solid white;
@@ -397,28 +392,24 @@ p {
     box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
     text-align: center; /* Centra el texto horizontalmente */
     overflow: hidden; /* Evita que el contenido desborde */
-    position: absolute; /* Cambia a posicionamiento absoluto */
-}
+    position: relative; /* Cambia a posicionamiento relativo */
+  }
 
-
-
-@media (max-width: 550px) {
+  @media (max-width: 550px) {
     .social {
-        width: 100px;
-        height: 100px;
+      width: 100px;
+      height: 100px;
     }
-}
+  }
 
-
-.social img {
+  .social img {
     width: 100%;
     height: auto; /* Ajusta la altura automáticamente */
     max-height: calc(100% - 40px); /* Asegura que la imagen no sobrepase el espacio disponible */
     border-radius: 15px; /* Aplica los bordes redondeados también a la imagen */
     margin-top: 10px; /* Añade un margen superior para separar del texto */
     object-fit: contain; /* Ajusta la imagen sin recortarla */
-
-}
+  }
 
 .source_code {
     color: #e0e0e0;
