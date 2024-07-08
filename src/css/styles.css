@@ -392,9 +392,16 @@ p {
   }
 
   .social {
+    position: relative;
     width: 150px;
     height: 150px;
-    border: 2px solid white;
+    color: #fff;
+    background: none;
+    overflow: hidden;
+    border-top: 2.5px solid rgba(255, 49, 49, 0.5);
+    border-right: 2.5px solid rgba(0, 255, 255, 0.5);
+    border-bottom: 2.5px solid rgba(245, 255, 244, 0.849);
+    border-left: 2.5px solid rgba(140, 0, 255, 0.5);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -405,13 +412,151 @@ p {
     overflow: hidden; /* Evita que el contenido desborde */
     position: relative; /* Cambia a posicionamiento relativo */
   }
-
-  @media (max-width: 550px) {
-    .social {
-      width: 100px;
-      height: 100px;
-    }
+  p {
+    font-size: 0.95rem;
+    text-align: center;
   }
+  span {
+    position: absolute;
+    border-radius: 100vmax;
+  }
+  .top {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      transparent 50%,
+      rgba(255, 49, 49, 0.5),
+      rgb(255, 49, 49)
+    );
+  }
+  .bottom {
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      rgba(252, 193, 193, 0.726),
+      rgb(252, 193, 193),
+      transparent 50%
+    );
+  }
+
+    .right {
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(0, 255, 255, 0.5),
+        rgb(0, 255, 255)
+      );
+    }
+
+    .left {
+      left: 0;
+      bottom: 0;
+      width: 5px;
+      height: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(125, 0, 197, 0.568),
+        rgb(125, 0, 197),
+        transparent 70%
+      );
+    }
+
+    .top {
+      animation: animateTop 3s ease-in-out infinite;
+    }
+
+    .bottom {
+      animation: animateBottom 3s ease-in-out infinite;
+    }
+
+    .right {
+      animation: animateRight 3s linear infinite;
+    }
+
+    .left {
+      animation: animateLeft 3s ease-in-out infinite;
+    }
+
+    @keyframes animateTop {
+      25% {
+        width: 100%;
+        opacity: 1;
+      }
+
+      30%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes animateBottom {
+      0%,
+      50% {
+        opacity: 0;
+        width: 0;
+      }
+
+      75% {
+        opacity: 1;
+        width: 100%;
+      }
+
+      76%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes animateRight {
+      0%,
+      25% {
+        opacity: 0;
+        height: 0;
+      }
+
+      50% {
+        opacity: 1;
+        height: 100%;
+      }
+
+      55%,
+      100% {
+        height: 100%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes animateLeft {
+      0%,
+      75% {
+        opacity: 0;
+        bottom: 0;
+        height: 0;
+      }
+
+      100% {
+        opacity: 1;
+        height: 100%;
+      }
+    }
+
+
+
+    @media (max-width: 550px) {
+      .social {
+        width: 100px;
+        height: 100px;
+      }
+    }
 
   .social img {
     width: 100%;
