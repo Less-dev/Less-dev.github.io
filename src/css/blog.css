@@ -1,0 +1,39 @@
+.post-preview {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: none;
+    border: 2px solid white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-preview img {
+    border-radius: 10px;
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 70px; /* Ajusta el tamaño según tus necesidades */
+    margin-right: 15px;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-content a {
+    color: aliceblue;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.post-content p {
+    padding-top: 5px;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.post-content h4 {
+    margin: 5px 0;
+    font-size: 0.8em;
+    color: gray;
+}
