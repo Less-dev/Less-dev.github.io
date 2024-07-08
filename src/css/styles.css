@@ -139,7 +139,6 @@ footer a {
     color: #525252; /* Cambia el color del texto según tu diseño */
     text-decoration: none;
 }
-
 .projects {
     width: 300px;
     height: 250px;
@@ -167,17 +166,17 @@ footer a {
     color: rgb(78, 6, 78); /* Cambia el color a morado cuando el cursor está sobre el enlace */
 }
 
-
 .projects img {
-    width: 170px;
-    height: 170px;
-    object-fit: cover; /* Ajusta la imagen dentro del cuadro sin distorsionar */
+    width: 100%;
+    height: auto;
+    max-width: 170px; /* Tamaño máximo de 170px */
+    max-height: 170px; /* Tamaño máximo de 170px */
+    object-fit: contain;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 895px) {
     .projects {
-        width: calc(50% - 20px); /* 50% del ancho menos el margen */
+        width: calc(100% - 20px); /* 50% del ancho menos el margen */
         max-width: 100%; /* Asegura que se ajuste al tamaño del contenedor */
         margin: 10px; /* Espacio entre los elementos */
     }
@@ -185,12 +184,7 @@ footer a {
     .box {
         justify-content: center; /* Centra los elementos hijos horizontalmente */
     }
-
 }
-
-
-
-
 
 @media (max-width: 768px) {
     .projects {
@@ -202,16 +196,18 @@ footer a {
     .box > div {
         flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas */
         justify-content: center;
-        .projects {
-            width: 500px;
-            height: 300px;
-        }
+    }
 
-        .responsive-image {
-            width: 80%; /* Reduce el tamaño de la imagen al 70% de su tamaño original */
-        }
+    .projects {
+        width: 500px;
+        height: 300px;
+    }
+
+    .responsive-image {
+        width: 80%; /* Reduce el tamaño de la imagen al 70% de su tamaño original */
     }
 }
+
 
 
 .responsive-image {
