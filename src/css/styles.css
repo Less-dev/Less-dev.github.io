@@ -233,18 +233,29 @@ footer a {
 
 .container-type {
     display: inline-block;
-    border: 2px solid #ffffff; /* Color blanco para los bordes */
+    border: 2px solid #cc9090; /* Color blanco para los bordes */
+    box-shadow: 0px 0px 10px rgba(0, 255, 191, 0.932); /* Sombra morada */
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
     max-width: 300px; /* Ancho máximo del contenedor */
     flex: 1; /* Permite que el contenedor se ajuste dinámicamente */
+    animation: shadow-animation 4s infinite alternate;
+}
+
+@keyframes shadow-animation {
+    0% { box-shadow: 0px 0px 10px rgb(182, 15, 15); } /* Sombra inicial */
+    25% { box-shadow: 0px 0px 10px rgb(15, 182, 15); } /* Cambio a verde */
+    50% { box-shadow: 0px 0px 10px rgb(15, 15, 182); } /* Cambio a azul */
+    75% { box-shadow: 0px 0px 10px rgb(182, 182, 15); } /* Cambio a amarillo */
+    100% { box-shadow: 0px 0px 10px rgb(182, 15, 182); } /* Cambio a rosa */
 }
 
 .container-descriptions {
     display: inline-block;
-    border: 2px solid #ffffff; /* Color blanco para los bordes */
+    border: 2px solid #cc9090; /* Color blanco para los bordes */
+    box-shadow: 0px 0px 10px rgba(0, 255, 191, 0.932); /* Sombra morada */
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px;
     box-sizing: border-box;
