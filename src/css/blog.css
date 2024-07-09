@@ -1,11 +1,36 @@
+.title_post {
+    font-size: 4vw; /* Ajusta el tamaño según el ancho de la pantalla */
+    text-align: center; /* Alinea el texto a la izquierda */
+    padding-left: 10px; /* Padding de 5px desde la izquierda */
+}
+
+/* Media queries para ajustar el tamaño en diferentes tamaños de pantalla */
+@media (min-width: 768px) {
+    .title_post {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title_post {
+        font-size: 2vw;
+    }
+}
+
+
+
 .post-preview {
     display: flex;
     align-items: center;
     border-radius: 15px;
-    background-color: none;
     border: 2px solid white;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.post-preview:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .post-preview img {
@@ -24,9 +49,14 @@
     margin: 0;
     font-size: 1.2em;
     font-weight: 900;
+    transition: color 0.3s ease-in-out;
 }
 
-.post-content p {
+.post-content a:hover {
+    color: lightgray;
+}
+
+.post-content h5 {
     padding-top: 5px;
     margin: 5px 0;
     font-size: 0.9em;
@@ -36,4 +66,91 @@
     margin: 5px 0;
     font-size: 0.8em;
     color: gray;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .post-preview img {
+        width: 90px;
+        height: 60px;
+    }
+
+    .post-content a {
+        font-size: 1.1em;
+    }
+
+    .post-content h5 {
+        font-size: 0.85em;
+    }
+
+    .post-content h4 {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 992px) {
+    .post-preview img {
+        width: 80px;
+        height: 55px;
+    }
+
+    .post-content a {
+        font-size: 1em;
+    }
+
+    .post-content h5 {
+        font-size: 0.8em;
+    }
+
+    .post-content h4 {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-preview img {
+        width: 70px;
+        height: 50px;
+    }
+
+    .post-content a {
+        font-size: 0.9em;
+    }
+
+    .post-content h5 {
+        font-size: 0.75em;
+    }
+
+    .post-content h4 {
+        font-size: 0.65em;
+    }
+}
+
+@media (max-width: 576px) {
+    .post-preview {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-preview img {
+        width: 90px;
+        height: 70px;
+        margin: 0 auto 10px auto;
+    }
+
+    .post-content {
+        text-align: center;
+    }
+
+    .post-content a {
+        font-size: 0.9em;
+    }
+
+    .post-content h5 {
+        font-size: 0.7.5em;
+    }
+
+    .post-content h4 {
+        font-size: 0.6.5em;
+    }
 }
