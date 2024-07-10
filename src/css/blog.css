@@ -154,3 +154,79 @@
         font-size: 0.6.5em;
     }
 }
+
+
+.description_post {
+    color: lightgray; /* Cambia el color del texto a gris claro */
+    text-shadow: 1px 1px 2px rgb(255, 70, 70); /* Aplica una sombra de texto oscura */
+    text-align: center; /* Centra el contenido */
+}
+
+
+.introduction_post {
+    text-align: center;
+    font-weight: bold;
+    color: #F5F5F5; /* Blanco pastel */
+    background: none;
+    padding: 10px;
+}
+
+
+
+
+.previous-knowledge {
+    padding-left: 20px;
+    color: #808080; /* Gris */
+  }
+  
+  .previous-knowledge h2 {
+    color: #808080; /* Gris */
+  }
+  
+  .previous-knowledge ul {
+    list-style-type: none;
+    padding: 10px 40px;
+  }
+  
+  .previous-knowledge li {
+    padding: 10px 0; /* Padding adicional de 20px arriba y abajo */
+  }
+  
+  .previous-knowledge a {
+    color: #FFFFFF; /* Blanco */
+  }
+  
+  .previous-knowledge a:hover {
+    text-decoration: underline;
+    color: rgb(228, 0, 0);
+  }
+  
+@media (max-width: 800px) {
+    .previous-knowledge ul {
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 736px) {
+    .previous-knowledge ul {
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 610px) {
+    .previous-knowledge ul {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .previous-knowledge ul {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 365px) {
+    .previous-knowledge ul {
+        padding: 10px 10px;
+    }
+}
