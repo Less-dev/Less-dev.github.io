@@ -58,3 +58,42 @@ function redirectToRandomUrl() {
     window.open(urls[randomIndex], '_blank');
 }
 
+function showSnackBar() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+  
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+
+
+
+function copyToClipboard(text) {
+    const el = document.createElement('textarea');  // Crear un elemento textarea
+    el.value = text;  // Asignar el texto a copiar
+    el.setAttribute('readonly', '');  // Hacer el textarea de solo lectura para que no se pueda editar accidentalmente
+    el.style.position = 'absolute'; 
+    el.style.left = '-9999px';  // Mover el textarea fuera del área visible de la pantalla
+    document.body.appendChild(el);  // Agregar el textarea al DOM
+  
+    // Seleccionar el texto dentro del textarea
+    const selected =
+      document.getSelection().rangeCount > 0
+        ? document.getSelection().getRangeAt(0)
+        : false;
+    el.select();
+    document.execCommand('copy');  // Copiar el texto seleccionado
+  
+    // Limpiar
+    document.body.removeChild(el);  // Eliminar el textarea del DOM
+    if (selected) {
+      document.getSelection().removeAllRanges();  // Limpiar la selección de texto
+      document.getSelection().addRange(selected);  // Restaurar la selección original si había alguna
+    }
+
+    showSnackBar()
+}
+  

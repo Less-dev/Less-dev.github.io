@@ -246,7 +246,7 @@
         -2px 2px 5px rgba(0, 0, 0, 0.5),
         -2px -2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px; /* Espacio entre h4 y img */
-    margin-left: 5px;
+    margin-left: 30px;
     display: inline-block;
 }
 .subtitle_post .image-container {
