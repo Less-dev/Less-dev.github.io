@@ -232,5 +232,45 @@
 }
 
 
+.subtitle_post h2 {
+    color: lightgray;
+    margin-bottom: 20px;
+}
+.subtitle_post h4 {
+    background-color: black;
+    color: #f8f8f8; /* blanco pastel */
+    padding: 5px;
+    box-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.5),
+        2px -2px 5px rgba(0, 0, 0, 0.5),
+        -2px 2px 5px rgba(0, 0, 0, 0.5),
+        -2px -2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; /* Espacio entre h4 y img */
+    margin-left: 5px;
+    display: inline-block;
+}
+.subtitle_post .image-container {
+    padding-left: 10px;
+    max-width: 700px;
 
+}
+.subtitle_post img {
+    display: block;
+    border-radius: 10px;
+    border: 2px solid #f8f8f8; /* borde blanco pastel */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra gris oscuro */
+    width: 90%; /* Ancho del 90% del contenedor */
+    height: auto;
+    margin-left: 0; /* Alinea la imagen al inicio horizontalmente */
+}
 
+/* Estilos adicionales para mejorar la visualización en pantallas pequeñas */
+@media (max-width: 768px) {
+    .subtitle_post .image-container {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .subtitle_post img {
+        width: 94%; /* Ancho del 94% del contenedor en pantallas pequeñas */
+    }
+}
