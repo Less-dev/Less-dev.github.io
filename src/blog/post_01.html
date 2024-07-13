@@ -54,7 +54,57 @@
           </div>
 
           <div class="subtitle_post">
-            <h2>1. Configuration of version catalog in the project</h2>
+            <h2>1. Creating a new project in Android Studio</h2>
+
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_create_new_project.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Select the empty Jetpack Compose template</h5>
+
+
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_new_project.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Give your project a name and change the package name to your preference</h5>
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_nex_creating_project.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+
+          <div class="subtitle_post">
+            <h5> &bull; Wait for your project to load and run it using the play button</h5>
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_run_the_project.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; View your application</h5>
+            <div class="image-container">
+                <img style="max-height: 500px; max-width: 250px" src="src/assets/drawable/post01_view_run_the_project.jpg" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>2. Configuration of version catalog in the project</h2>
+            <h5> &bull; Copy the following versions into your file</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
             </span>
@@ -70,6 +120,7 @@
           <div id="snackbar">code copied successfully!</div>
 
           <div class="subtitle_post">
+            <h5> &bull; Copy the following dependencies into your file</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt-android = { module = &quot;com.google.dagger:hilt-android&quot;, version.ref = &quot;hilt&quot; }\nhilt-android-compiler = { module = &quot;com.google.dagger:hilt-android-compiler&quot;, version.ref = &quot;hilt&quot; }\nhilt-android-testing = { module = &quot;com.google.dagger:hilt-android-testing&quot;, version.ref = &quot;hilt&quot; }\nhilt-compiler = { module = &quot;com.google.dagger:hilt-compiler&quot;, version.ref = &quot;hilt&quot; }\nandroidx-navigation-compose = { module = &quot;androidx.navigation:navigation-compose&quot;, version.ref = &quot;androidxNavigation&quot; }\nandroidx-hilt-navigation-compose = { module = &quot;androidx.hilt:hilt-navigation-compose&quot;, version.ref = &quot;androidxHilt&quot; }\nandroidx-room-runtime = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidxRoom&quot; }\nandroidx-room-ktx = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidxRoom&quot; }\nandroidx-room-compiler = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidxRoom&quot; }\nandroidx-lifecycle-viewmodel-compose = { module = &quot;androidx.lifecycle:lifecycle-viewmodel-compose&quot;, version.ref = &quot;androidxLifecycle&quot;}\n')">
            </span>
@@ -82,6 +133,7 @@
           <br> 
 
           <div class="subtitle_post">
+            <h5> &bull; Copy the following plugins into your file</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
            </span>
@@ -95,7 +147,8 @@
           <br>
 
           <div class="subtitle_post">
-            <h2>2. Configuration of build.gradle and necessary dependencies:</h2>
+            <h2>3. Configuration of build.gradle and necessary dependencies:</h2>
+            <h5> &bull; Verify that your build.gradle.kts (project) file looks like this</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
            </span>
@@ -110,6 +163,7 @@
           
           
           <div class="subtitle_post">
+            <h5> &bull; Verify that your build.gradle.kts (:app) file has the following plugins added</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
            </span>
@@ -123,6 +177,7 @@
 
 
           <div class="subtitle_post">
+            <h5> &bull; Verifique que su archivo build.gradle.kts (:app) tenga agregadas las siguientes dependencias</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt-android = { module = &quot;com.google.dagger:hilt-android&quot;, version.ref = &quot;hilt&quot; } hilt-android-compiler = { module = &quot;com.google.dagger:hilt-android-compiler&quot;, version.ref = &quot;hilt&quot; } hilt-android-testing = { module = &quot;com.google.dagger:hilt-android-testing&quot;, version.ref = &quot;hilt&quot; } hilt-compiler = { module = &quot;com.google.dagger:hilt-compiler&quot;, version.ref = &quot;hilt&quot; } androidx-navigation-compose = { module = &quot;androidx.navigation:navigation-compose&quot;, version.ref = &quot;androidxNavigation&quot; } androidx-hilt-navigation-compose = { module = &quot;androidx.hilt:hilt-navigation-compose&quot;, version.ref = &quot;androidxHilt&quot; } androidx-room-runtime = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidxRoom&quot; } androidx-room-ktx = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidxRoom&quot; } androidx-room-compiler = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidxRoom&quot; } androidx-lifecycle-viewmodel-compose = { module = &quot;androidx.lifecycle:lifecycle-viewmodel-compose&quot;, version.ref = &quot;androidxLifecycle&quot; }')">
            </span>
