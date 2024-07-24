@@ -195,16 +195,198 @@
             <h2>4. To make Hilt work in your application, do the following:</h2>
             <h5> &bull; Add the following code to the file</h5>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
-            onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+            onclick="copyToClipboard('@HiltAndroidApp\nclass App: Application()')">
            </span>
             <h4>App.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/App.kt">file </a> 
             <div class="image-container">
                 <img src="src/assets/drawable/post01_app_class.png" alt="Version Catalog">
             </div>
           </div>
-        
 
           <br>
+
+          <div class="subtitle_post">
+            <h2>5. Add your application class to your AndroidManifest</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('android:name=<NameApp>')">
+           </span>
+            <h4>AndroidManifest.xml</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/AndroidManifest.xml">file </a> 
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_android_manifest.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>6. Create the following file structure.</h2>
+            <h5> &bull; This step can be optional, but we want to maintain good readability of our project and understand it</h5>
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_data_and_local_packages.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>7. In the root of the data package, create a data model called UsersImp and a repository called UsersRepository</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('data class UsersImp(\n    val id: Int = 0,\n    val name: String? = null,\n    val description: String? = null\n)')">
+           </span>
+            <h4>UsersImp.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/UsersImp.kt">file </a> 
+
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_usersIMP.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('interface UsersRepository {\n    val users: Flow<List<UsersImp>>\n    suspend fun insert(user: UsersImp)\n\n    suspend fun update(user: UsersImp)\n\n    suspend fun delete(user: UsersImp)\n\n} \n \n class UsersRepositoryImp @Inject constructor(\n    private val usersDao: UsersDao\n): UsersRepository {\n    override val users: Flow<List<UsersImp>>\n        get() = usersDao.getUsers().map { items ->\n            items.map {\n                UsersImp(\n                    id = it.id,\n                    name = it.name,\n                    description = it.description\n                )\n            }\n        }\n\n    override suspend fun insert(user: UsersImp) =\n        usersDao.insertUser(\n            Users(\n                name = user.name,\n                description = user.description\n            )\n        )\n\n    override suspend fun update(user: UsersImp) =\n        usersDao.updateUser(\n            Users(\n                name = user.name,\n                description = user.description\n            )\n        )\n\n    override suspend fun delete(user: UsersImp) =\n        usersDao.deleteUser(\n            Users(\n                name = user.name,\n                description = user.description\n            )\n        )\n\n}')">
+           </span>
+            <h4>UsersRepository.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/UsersRepository.kt">file </a> 
+            <div class="image-container">
+              <div class="image-container">
+                <img src="src/assets/drawable/post01_users_repository.png" alt="Version Catalog">
+              </div>
+              <br>
+              <img src="src/assets/drawable/post01_users_repositoryIMP_01.png" alt="Version Catalog">
+              <br>
+              <img src="src/assets/drawable/post01_users_repositoryIMP_02.png" alt="Version Catalog">
+              <br>
+              <img src="src/assets/drawable/post01_users_repositoryIMP_03.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+
+          <div class="subtitle_post">
+            <h2>8. In the di (Dagger Hilt) module, create a file</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@Module\n@InstallIn(SingletonComponent::class)\ninterface DataModule {\n\n    @Singleton\n    @Binds\n    fun bindsUserRepository(usersRepositoryImp: UsersRepositoryImp) : UsersRepository\n\n}')">
+           </span>
+            <h4>DataModule.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/di/DataModule.kt">file </a> 
+            <h5>&bull; Add the following content, so we can use it in the ViewModel layer.</h5>
+            
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_data_module.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>10. In the root of your local directory, create a constants file called</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('object CONSTANTS {\n const val NAMEDATABASE = <NameDataBase> \n }')">
+           </span>
+            <h4>CONSTANTS.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/local/CONSTANTS.kt">file </a> 
+            <h5>&bull; Add a constant called `NAMEDATABASE` and assign it the name of the database that your application will use.</h5>
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_CONSTANTS.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>11. Create a package named AppDataBase and add the following files:</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+           </span>
+            <h4>AppDataBase.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/local/database/AppDataBase.kt">file </a> 
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_app_database.png" alt="Version Catalog">
+            </div>
+
+          </div>
+
+          <br>
+
+
+          <div class="subtitle_post">
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@Entity\ndata class Users(\n    @PrimaryKey(autoGenerate = true)\n    val id: Int = 0,\n    val name: String? = null,\n    val description: String? = null\n)')">
+           </span>
+           <h4>UsersDao.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/local/database/UsersDao.kt">file </a> 
+           
+           <div class="image-container">
+            <img src="src/assets/drawable/post01_users_entity.png" alt="Version Catalog">
+          </div>
+
+          <br>
+
+           <div class="image-container">
+               <img src="src/assets/drawable/post01_users_dao.png" alt="Version Catalog">
+           </div>
+
+           <br>
+
+          </div>
+
+
+          <div class="subtitle_post">
+            <h2>12. Create a Dagger Hilt package and add the file</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@Module\n@InstallIn(SingletonComponent::class)\nclass DataBaseModule {\n\n    @Provides\n    @Singleton\n    fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase =\n        Room.databaseBuilder(\n            appContext,\n            AppDatabase::class.java,\n            CONSTANTS.NAMEDATABASE\n        ).build()\n\n\n    @Provides\n    fun provideUsersDao(appDatabase: AppDatabase) =\n        appDatabase.usersDao()\n}')">
+           </span>
+            <h4>DataBaseModule.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/data/local/di/DataBaseModule.kt">file </a> 
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_data_base_module.png" alt="Version Catalog">
+            </div>
+          </div>
+
+          <br>
+
+
+
+          <div class="subtitle_post">
+            <h2>13. Create a presentation layer and add the following files</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@HiltViewModel\nclass HomeViewModel @Inject constructor(\n    private val usersRepository: UsersRepository\n): ViewModel() {\n\n    val usersUiState: StateFlow<UsersUiState> = usersRepository\n        .users.map<List<UsersImp>, UsersUiState> {UsersUiState.Success(data = it)}\n        .catch { emit(UsersUiState.Error(it)) }\n        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UsersUiState.Loading)\n\n\n    fun insertUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.insert(user)\n        }\n\n    fun updateUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.update(user)\n        }\n\n    fun deleteUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.delete(user)\n        }\n\n\n\n}\n\nsealed interface UsersUiState {\n    data object Loading : UsersUiState\n    data class Error(val throwable: Throwable) : UsersUiState\n    data class Success(val data: List<UsersImp>) : UsersUiState\n}')">
+           </span>
+
+           <h4>HomeViewModel.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/ui/theme/presentation/HomeViewModel.kt">file </a> 
+           <div class="image-container">
+               <img src="src/assets/drawable/post01_view_model.png" alt="Version Catalog">
+           </div>
+
+           <br>
+
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@Composable\nfun HomeScreen(homeViewModel: HomeViewModel = hiltViewModel()) {\n\n    val users = homeViewModel.usersUiState.collectAsState().value\n\n\n    when (users) {\n        is UsersUiState.Error -> {\n\n        }\n\n        is UsersUiState.Loading -> {\n\n        }\n\n        is UsersUiState.Success -> {\n            val data = users.data\n            ViewUsers(users = data)\n        }\n    }\n\n}')">
+            </span> 
+
+            <h4>HomeScreen.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/ui/theme/presentation/HomeScreen.kt">file </a> 
+            <div class="image-container">
+                <img src="src/assets/drawable/post01_home_screen.png" alt="Version Catalog">
+            </div>
+
+            <br>
+
+            <div class="image-container">
+              <img src="src/assets/drawable/post01_view_users_01.png" alt="Version Catalog">
+            </div>
+
+            <br>
+
+            
+            <div class="image-container">
+              <img src="src/assets/drawable/post01_view_users_02.png" alt="Version Catalog">
+            </div>
+
+
+          </div>
+
+          <br>
+
+
+          <br>
+
+
 
             
           <footer>  
