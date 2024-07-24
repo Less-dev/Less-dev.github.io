@@ -413,9 +413,6 @@
 
            <div class="subtitle_post">
             <h2>16. Finish the app by hitting play and checking the results</h2>
-            <span id="copyIcon" class="icon" style="cursor: pointer;"
-            onclick="copyToClipboard('@HiltViewModel\nclass HomeViewModel @Inject constructor(\n    private val usersRepository: UsersRepository\n): ViewModel() {\n\n    val usersUiState: StateFlow<UsersUiState> = usersRepository\n        .users.map<List<UsersImp>, UsersUiState> {UsersUiState.Success(data = it)}\n        .catch { emit(UsersUiState.Error(it)) }\n        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UsersUiState.Loading)\n\n\n    fun insertUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.insert(user)\n        }\n\n    fun updateUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.update(user)\n        }\n\n    fun deleteUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.delete(user)\n        }\n\n\n\n}\n\nsealed interface UsersUiState {\n    data object Loading : UsersUiState\n    data class Error(val throwable: Throwable) : UsersUiState\n    data class Success(val data: List<UsersImp>) : UsersUiState\n}')">
-           </span>
 
            <div class="image-container">
                <img src="src/assets/drawable/post01_finnally_app.png" alt="Version Catalog">
