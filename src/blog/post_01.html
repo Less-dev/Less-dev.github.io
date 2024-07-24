@@ -30,7 +30,7 @@
           </div>
 
 
-          <h5 class="description_post">A simple guide to implement Hilt and Room with Compose <br> 7 Jul 22:39 </h5>
+          <h5 class="description_post">A simple guide to implement Hilt and Room with Compose <br> 24 Jul 18:16 </h5>
 
           <br>
 
@@ -48,7 +48,7 @@
             <ul>
               <li><a href="https://developer.android.com/develop/ui/compose" target="_blank"> <img src="https://media.tenor.com/DBaV_cCwFUgAAAAi/happy-star.gif" height="20px" width="20px">  Jetpack Compose</a></li>
               <li><a href="https://kotlinlang.org/" target="_blank"> <img src="https://media.tenor.com/DBaV_cCwFUgAAAAi/happy-star.gif" height="20px" width="20px"> Kotlin</a></li>
-              <li><a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=es-419#0" target="_blank"> <img src="https://media.tenor.com/DBaV_cCwFUgAAAAi/happy-star.gif" height="20px" width="20px"> Android básico</a></li>
+              <li><a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=es-419#0" target="_blank"> <img src="https://media.tenor.com/DBaV_cCwFUgAAAAi/happy-star.gif" height="20px" width="20px"> Android básic</a></li>
               <li><a href="https://developer.android.com/studio?gad_source=1&gclid=CjwKCAjw4ri0BhAvEiwA8oo6F6Sk-4DVqQ1dYKEVlho35iM5C-cIfZYIK6Bn0JuE447SIkyR3E59OBoC9RMQAvD_BwE&gclsrc=aw.ds" target="_blank"> <img src="https://media.tenor.com/DBaV_cCwFUgAAAAi/happy-star.gif" height="20px" width="20px"> Android Studio</a></li>
             </ul>
           </div>
@@ -383,8 +383,49 @@
 
           <br>
 
+          <div class="subtitle_post">
+            <h2>14. Add information to the entity in your database using your ViewModel layer in the view</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('	LaunchedEffect(Unit) {\n        this.launch(Dispatchers.IO) {\n            homeViewModel.insertUser(\n            	UsersImp(\n                	name = `quot;Less`,\n                    description =`Hi, i like a music`\n                )\n            )\n        }\n    }')">
+           </span>
+
+           <h4>HomeScreen.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/ui/theme/presentation/HomeScreen.kt">file </a> 
+           <div class="image-container">
+               <img src="src/assets/drawable/post01_add_new_user.png" alt="Version Catalog">
+           </div>
+
+           <br>
 
           <br>
+
+          <div class="subtitle_post">
+            <h2>15. Add the view to the MainActivity</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('HomeScreen()')">
+           </span>
+
+           <h4>MainActivity.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/app/src/main/java/org/compose_projects/IntegrateRoomAndHilt/MainActivity.kt">file </a> 
+           <div class="image-container">
+               <img src="src/assets/drawable/post01_main_activity_finally.png" alt="Version Catalog">
+           </div>
+
+           <br>
+
+           <div class="subtitle_post">
+            <h2>16. Finish the app by hitting play and checking the results</h2>
+            <span id="copyIcon" class="icon" style="cursor: pointer;"
+            onclick="copyToClipboard('@HiltViewModel\nclass HomeViewModel @Inject constructor(\n    private val usersRepository: UsersRepository\n): ViewModel() {\n\n    val usersUiState: StateFlow<UsersUiState> = usersRepository\n        .users.map<List<UsersImp>, UsersUiState> {UsersUiState.Success(data = it)}\n        .catch { emit(UsersUiState.Error(it)) }\n        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UsersUiState.Loading)\n\n\n    fun insertUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.insert(user)\n        }\n\n    fun updateUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.update(user)\n        }\n\n    fun deleteUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.delete(user)\n        }\n\n\n\n}\n\nsealed interface UsersUiState {\n    data object Loading : UsersUiState\n    data class Error(val throwable: Throwable) : UsersUiState\n    data class Success(val data: List<UsersImp>) : UsersUiState\n}')">
+           </span>
+
+           <div class="image-container">
+               <img src="src/assets/drawable/post01_finnally_app.png" alt="Version Catalog">
+           </div>
+
+           <br>
+
+          
+          <br>
+
 
 
 
