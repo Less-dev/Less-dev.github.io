@@ -230,6 +230,8 @@
         padding: 10px 10px;
     }
 }
+
+
 .subtitle_post {
     text-align: center; /* Centrar el contenido horizontalmente */
     max-width: 700px; /* Ancho máximo de 700px */
@@ -253,6 +255,7 @@
     margin-bottom: 10px; /* Espacio entre h4 y img */
     display: inline-block;
     margin-left: 30px;
+    
 }
 
 
@@ -291,3 +294,18 @@
     }
 }
 
+.align-copyboard {
+    display: flex; /* Utiliza flexbox para alinear elementos en línea */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+    margin-left: 30px;
+}
+
+.align-copyboard span.icon {
+    margin-right: 10px; /* Espacio entre el span y el h4 */
+}
+
+.align-copyboard h4 {
+    margin-left: 35px; /* Elimina el margen por defecto del h4 */
+    margin-top: 10px;
+}
