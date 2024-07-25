@@ -281,7 +281,30 @@
     width: 90%; /* Ancho del 90% del contenedor */
     height: auto;
     margin: 0 auto; /* Centrar la imagen */
-}
+  }
+  
+  .image-container {
+    position: relative;
+    width: 90%; /* Ajusta el tamaño del contenedor según sea necesario */
+    margin: 0 auto; /* Centrar el contenedor */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .zoom {
+    position: absolute;
+    width: 100px; /* Tamaño de la ventana de zoom */
+    height: 100px; /* Tamaño de la ventana de zoom */
+    border: 2px solid #000;
+    background-repeat: no-repeat;
+    display: none;
+    border-radius: 10px; /* Añadir el borde redondeado para que coincida con la imagen */
+  }
+  
+  
 
 /* Estilos adicionales para mejorar la visualización en pantallas pequeñas */
 @media (max-width: 768px) {

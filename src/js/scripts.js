@@ -26,7 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
+document.querySelectorAll('.subtitle_post .image-container').forEach(container => {
+    const image = container.querySelector('img');
+    const zoom = container.querySelector('.zoom');
+  
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      zoom.style.backgroundImage = `url(${image.src})`;
+      zoom.style.backgroundSize = `${image.width * 2}px ${image.height * 2}px`;
+      zoom.style.backgroundPosition = `-${x * 2}px -${y * 2}px`;
+      zoom.style.display = 'block';
+      zoom.style.left = `${x - zoom.offsetWidth / 2}px`;
+      zoom.style.top = `${y - zoom.offsetHeight / 2}px`;
+    });
+  
+    container.addEventListener('mouseleave', () => {
+      zoom.style.display = 'none';
+    });
+  });
+  
 
 function redirectToRandomUrl() {
     const urls = [
@@ -97,3 +118,5 @@ function copyToClipboard(text) {
     showSnackBar()
 }
   
+
+
