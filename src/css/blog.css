@@ -230,12 +230,17 @@
         padding: 10px 10px;
     }
 }
-
+.subtitle_post {
+    text-align: center; /* Centrar el contenido horizontalmente */
+    max-width: 700px; /* Ancho máximo de 700px */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
 
 .subtitle_post h2 {
     color: lightgray;
     margin-bottom: 20px;
 }
+
 .subtitle_post h4 {
     background-color: black;
     color: #f8f8f8; /* blanco pastel */
@@ -246,31 +251,33 @@
         -2px 2px 5px rgba(0, 0, 0, 0.5),
         -2px -2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px; /* Espacio entre h4 y img */
-    margin-left: 30px;
     display: inline-block;
+    margin-left: 30px;
 }
+
+
 
 .subtitle_post h5 {
-    color:antiquewhite;
+    color: antiquewhite;
     margin-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
+    text-align: left; /* Alinear el texto a la izquierda */
 }
-
-
 
 .subtitle_post .image-container {
     padding-left: 10px;
     max-width: 700px;
+    margin: 0 auto; /* Centrar el contenedor de imagen */
 }
 
 .subtitle_post img {
     display: block;
     border-radius: 10px;
-    border: 2px solid #f8f8f8; /* borde blanco pastel */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra gris oscuro */
+    border: 2px solid #ffcfcfa4; /* borde blanco pastel */
+    box-shadow: 2px 2px 5px rgba(255, 183, 183, 0.5); /* sombra gris oscuro */
     width: 90%; /* Ancho del 90% del contenedor */
     height: auto;
-    margin-left: 0; /* Alinea la imagen al inicio horizontalmente */
+    margin: 0 auto; /* Centrar la imagen */
 }
 
 /* Estilos adicionales para mejorar la visualización en pantallas pequeñas */
@@ -283,3 +290,4 @@
         width: 94%; /* Ancho del 94% del contenedor en pantallas pequeñas */
     }
 }
+

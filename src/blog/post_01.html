@@ -96,7 +96,7 @@
           <div class="subtitle_post">
             <h5> &bull; View your application</h5>
             <div class="image-container">
-                <img style="max-height: 500px; max-width: 250px" src="src/assets/drawable/post01_view_run_the_project.jpg" alt="Version Catalog">
+                <img src="src/assets/drawable/post01_view_run_the_project.jpg" alt="Version Catalog">
             </div>
           </div>
 
@@ -279,7 +279,7 @@
           <br>
 
           <div class="subtitle_post">
-            <h2>10. In the root of your local directory, create a constants file called</h2>
+            <h2>9. In the root of your local directory, create a constants file called</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('object CONSTANTS {\n const val NAMEDATABASE = <NameDataBase> \n }')">
            </span>
@@ -293,7 +293,7 @@
           <br>
 
           <div class="subtitle_post">
-            <h2>11. Create a package named AppDataBase and add the following files:</h2>
+            <h2>10. Create a package named AppDataBase and add the following files:</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
            </span>
@@ -329,7 +329,7 @@
 
 
           <div class="subtitle_post">
-            <h2>12. Create a Dagger Hilt package and add the file</h2>
+            <h2>11. Create a Dagger Hilt package and add the file</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('@Module\n@InstallIn(SingletonComponent::class)\nclass DataBaseModule {\n\n    @Provides\n    @Singleton\n    fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase =\n        Room.databaseBuilder(\n            appContext,\n            AppDatabase::class.java,\n            CONSTANTS.NAMEDATABASE\n        ).build()\n\n\n    @Provides\n    fun provideUsersDao(appDatabase: AppDatabase) =\n        appDatabase.usersDao()\n}')">
            </span>
@@ -344,7 +344,7 @@
 
 
           <div class="subtitle_post">
-            <h2>13. Create a presentation layer and add the following files</h2>
+            <h2>12. Create a presentation layer and add the following files</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('@HiltViewModel\nclass HomeViewModel @Inject constructor(\n    private val usersRepository: UsersRepository\n): ViewModel() {\n\n    val usersUiState: StateFlow<UsersUiState> = usersRepository\n        .users.map<List<UsersImp>, UsersUiState> {UsersUiState.Success(data = it)}\n        .catch { emit(UsersUiState.Error(it)) }\n        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UsersUiState.Loading)\n\n\n    fun insertUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.insert(user)\n        }\n\n    fun updateUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.update(user)\n        }\n\n    fun deleteUser(user: UsersImp) =\n        viewModelScope.launch(Dispatchers.IO) {\n            usersRepository.delete(user)\n        }\n\n\n\n}\n\nsealed interface UsersUiState {\n    data object Loading : UsersUiState\n    data class Error(val throwable: Throwable) : UsersUiState\n    data class Success(val data: List<UsersImp>) : UsersUiState\n}')">
            </span>
@@ -384,7 +384,7 @@
           <br>
 
           <div class="subtitle_post">
-            <h2>14. Add information to the entity in your database using your ViewModel layer in the view</h2>
+            <h2>13. Add information to the entity in your database using your ViewModel layer in the view</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('	LaunchedEffect(Unit) {\n        this.launch(Dispatchers.IO) {\n            homeViewModel.insertUser(\n            	UsersImp(\n                	name = `quot;Less`,\n                    description =`Hi, i like a music`\n                )\n            )\n        }\n    }')">
            </span>
@@ -399,7 +399,7 @@
           <br>
 
           <div class="subtitle_post">
-            <h2>15. Add the view to the MainActivity</h2>
+            <h2>14. Add the view to the MainActivity</h2>
             <span id="copyIcon" class="icon" style="cursor: pointer;"
             onclick="copyToClipboard('HomeScreen()')">
            </span>
@@ -412,7 +412,7 @@
            <br>
 
            <div class="subtitle_post">
-            <h2>16. Finish the app by hitting play and checking the results</h2>
+            <h2>15. Finish the app by hitting play and checking the results. 🎉</h2>
 
            <div class="image-container">
                <img src="src/assets/drawable/post01_finnally_app.png" alt="Version Catalog">
