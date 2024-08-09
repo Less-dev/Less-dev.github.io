@@ -30,7 +30,7 @@
           <br>
 
 
-          <h5 class="description_post">In this post, we'll look at how to create an application template from scratch<br> 08 Ago 14:00 </h5>
+          <h5 class="description_post">In this post, we'll look at how to create an application template from scratch<br> 09 Ago 11:28 </h5>
 
           <br>
 
@@ -54,26 +54,243 @@
 
 
           <div class="subtitle_post">
-            <h2>1. Creating a new project in Android Studio</h2>
-
+            <h2>1. Creating a new module in the project</h2>
             <div class="image-container">
-                <img src="src/assets/drawable/post01_create_new_project.png" alt="Version Catalog">
+                <img src="src/assets/drawable/post02_new_module_01.png" alt="Version Catalog">
             <div class="zoom"></div>
-
             </div>
           </div>
 
           <br>
 
           <div class="subtitle_post">
-            <h5> &bull; Select the empty Jetpack Compose template</h5>
+            <h5> &bull; Select Android Library, change the module name and package, and finish.</h5>
 
 
             <div class="image-container">
-              <img src="src/assets/drawable/post01_new_project.png" alt="Version Catalog">
+              <img src="src/assets/drawable/post02_new_module_02.png" alt="Version Catalog">
               <div class="zoom"></div>
             </div>
           </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>2. Configure the build.gradle file of your template:</h2>
+            <h5> &bull; Make sure to have the following plugins in the header</h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>build.gradle.kts (:template-your_name_template)</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+   
+            </div>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_plugins_of_gradle.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Configure a buildFeatures for usage the features of the app</h5>
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_build_features.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Ensure you have the following dependencies with version catalog in your Gradle file</h5>
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_dependencies_01.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_dependencies_02.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>3. Create the directory structure according to your needs</h2>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_create_directories.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Example structure </h5>
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_show_directories.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>4. Create a Navigation.kt file at the root of the package and keep it public</h2>
+            <h5> &bull; NOTE: Remember that the Navigation.kt file will be the only one visible in the app; make everything else internal by using the internal visibility modifier </h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>Navigation.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_sample_navigation_01.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_sample_navigation_02.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>5. Create a view. We'll use HomeScreen as an example</h2>
+            <h5> &bull; First Hello World </h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>HomeScreen.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+   
+            </div>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_home_screen.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>6. Call your template from the build.gradle file at the app level</h2>
+            <h5> &bull; Open the Gradle Scripts directory </h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>build.gradle (:app)</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_config_gradle_01.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull; Add the following in dependencies: implementation(project(":template-your_name_template")) </h5>
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_config_gradle_02.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>7. Add your template to the application</h2>
+            <h5> &bull; Open the directory app > net.spydroid.app</h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>build.gradle (:app)</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_add_template_to_project_01.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull;Create a string defining your template and set it to the variable template_app</h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>config.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_add_template_to_project_02.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h5> &bull;Create a constant named preference_name and assign it the same string you created earlier</h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>MainScreen.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+              <div class="image-container">
+              <img src="src/assets/drawable/post02_add_template_to_project_03.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+
+            <h5> &bull;Go to line 112 of the file and add the navigation for your app, just like the others</h5>
+            <div class="align-copyboard">
+              <span id="copyIcon" class="icon" style="cursor: pointer;"
+              onclick="copyToClipboard('hilt = &quot;2.51.1&quot;\nandroidxRoom = &quot;2.6.1&quot;\nandroidxHilt = &quot;1.2.0&quot;\nandroidxNavigation = &quot;2.7.7&quot;\nandroidxLifecycle = &quot;2.7.0&quot;')">
+             </span>
+              <h4>MainScreen.kt</h4> - <a target="_blank" style="color: azure;" href="https://github.com/compose-projects-android/IntegrateRoomAndHilt/blob/master/build.gradle.kts">file </a> 
+            </div>
+
+            <div class="image-container">
+              <img src="src/assets/drawable/post02_add_template_to_project_04.png" alt="Version Catalog">
+              <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="subtitle_post">
+            <h2>8. Run Project</h2>
+           <div class="image-container">
+                <img src="src/assets/drawable/post02_run_project.png" alt="Version Catalog">
+                <div class="zoom"></div>
+            </div>
+          </div>
+
+          <br>
+
 
           <br>
                     
