@@ -1,16 +1,8 @@
 <p align="center">
-    <img src="https://github.com/Less-dev/Less-dev.github.io/assets/166412593/85c27ba1-3a6b-43bf-aa78-398d6f71cddc" width="1000" height="300">
+    <img src="https://github.com/user-attachments/assets/1c078134-3b66-4b0e-87cc-20cfbc0aa605" width="320 height="320">
 </p>
 
-
-
-<h2 align="center">Portfolio</h2>
-<p align="center">
-    <img src="https://github.com/Less-dev/Less-dev.github.io/assets/166412593/3ecd2b0b-bea2-4db6-9556-881de158662b" width="150">
-</p>
-
-
-<h3 align="center">A portfolio to demonstrate my technical skills</h3>
+<h3 align="center">Una representación virtual de lo que soy.</h3>
 
 
 <p align="center">
