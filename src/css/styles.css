@@ -140,8 +140,8 @@ footer a {
     text-decoration: none;
 }
 .projects {
-    width: 300px;
-    height: 250px;
+    width: 350px;
+    height: 300px;
     border: 2px solid rgb(78, 0, 0); /* Bordes rojos */
     box-shadow: 0px 0px 10px rgba(128, 0, 128, 0.6); /* Sombra morada */
     border-radius: 10px;
@@ -167,10 +167,8 @@ footer a {
 }
 
 .projects img {
-    width: 100%;
-    height: auto;
-    max-width: 170px; /* Tamaño máximo de 170px */
-    max-height: 170px; /* Tamaño máximo de 170px */
+    width: 85%;
+    height: 80%;
     object-fit: contain;
 }
 
