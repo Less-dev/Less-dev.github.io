@@ -22,7 +22,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/drawable/background.png');
+  background-image: url('https://less-dev.github.io/src/assets/drawable/background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
