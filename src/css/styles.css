@@ -1,32 +1,80 @@
 body {
-    font-family: Arial, sans-serif; /* Fuente por defecto */
-    background-color: #0D1117;
-    color: #C9D1D9;
+  font-family: Arial, sans-serif;
+  background-color: #0D1117;
+  color: #C9D1D9;
+  overflow: hidden; /* Desactiva el scroll de la pantalla */
+}
+
+#background-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 80vh;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+#background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/drawable/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: -1;
+  opacity: var(--bg-opacity, 0.8); /* Usa la variable de opacidad, con un valor por defecto */
 }
 
 
-.box_index {
-    padding: 20px;
-    border-radius: 20px; /* Esquinas redondeadas */
-    border: 3.4px solid rgb(143, 12, 12); /* Bordes rojos */
-    margin: 20px; /* Margen exterior */
-    position: relative; /* Posición relativa para contener los menús */
-    box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.603);
-    overflow: hidden; /* Evita que el contenido se desborde */
+/* Personalización del scrollbar para navegadores WebKit (Chrome, Safari) */
+.box_index, .box {
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 3.4px solid rgb(143, 12, 12);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.603);
+  overflow: auto; /* Habilita el scroll interno */
+  box-sizing: border-box;
+
+  /* Añade padding-right de 10px para que la barra de desplazamiento no toque el borde */
+  padding-right: 15px;
 }
 
-
-
-.box {
-    padding: 20px;
-    border-radius: 20px; /* Esquinas redondeadas */
-    border: 3.4px solid rgb(143, 12, 12); /* Bordes rojos */
-    margin: 20px; /* Margen exterior */
-    position: relative; /* Posición relativa para contener los menús */
-    box-shadow: 0px 0px 10px rgba(255, 123, 0, 0.603);
-    overflow: hidden; /* Evita que el contenido se desborde */
+/* Personalización de la barra de desplazamiento */
+.box_index::-webkit-scrollbar,
+.box::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
 }
 
+.box_index::-webkit-scrollbar-track,
+.box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente de la pista */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+.box_index::-webkit-scrollbar-thumb,
+.box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); /* Color del pulgar (scrollbar) semi-transparente */
+  border-radius: 10px; /* Esquinas redondeadas */
+  border: 2px solid transparent; /* Espacio alrededor del pulgar */
+  background-clip: content-box; /* Asegura que el borde sea visible */
+}
+
+.box_index::-webkit-scrollbar-thumb:hover,
+.box::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); /* Color más opaco al pasar el cursor */
+}
 
 
 /* Estilos principales */

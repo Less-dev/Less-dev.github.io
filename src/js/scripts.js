@@ -1,30 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('background-container');
-    
-    // Añadir la clase bg
-    const bg = document.createElement('div');
-    bg.className = 'bg';
-    container.appendChild(bg);
+  const container = document.getElementById('background-container');
+  
+  // Ajustar la opacidad de la imagen de fondo
+  const backgroundImage = document.getElementById('background-image');
+  if (backgroundImage) {
+      const opacityValue = backgroundImage.getAttribute('data-opacity') || 0.8; // Toma el valor de data-opacity o 0.8 por defecto
+      backgroundImage.style.setProperty('--bg-opacity', opacityValue);
+  }
+  
+  // Añadir la clase bg
+  const bg = document.createElement('div');
+  bg.className = 'bg';
+  container.appendChild(bg);
 
-    // Añadir 15 elementos firefly
-    for (let i = 0; i < 15; i++) {
-        const firefly = document.createElement('div');
-        firefly.className = 'firefly';
-        container.appendChild(firefly);
-    }
+  // Añadir 15 elementos firefly
+  for (let i = 0; i < 15; i++) {
+      const firefly = document.createElement('div');
+      firefly.className = 'firefly';
+      container.appendChild(firefly);
+  }
 
-    // Añadir 110 elementos circle-container
-    for (let i = 0; i < 110; i++) {
-        const circleContainer = document.createElement('div');
-        circleContainer.className = 'circle-container';
-        
-        const circle = document.createElement('div');
-        circle.className = 'circle';
-        
-        circleContainer.appendChild(circle);
-        container.appendChild(circleContainer);
-    }
+  // Añadir 110 elementos circle-container
+  for (let i = 0; i < 110; i++) {
+      const circleContainer = document.createElement('div');
+      circleContainer.className = 'circle-container';
+      
+      const circle = document.createElement('div');
+      circle.className = 'circle';
+      
+      circleContainer.appendChild(circle);
+      container.appendChild(circleContainer);
+  }
 });
+
 
 document.querySelectorAll('.subtitle_post .image-container').forEach(container => {
     const image = container.querySelector('img');
