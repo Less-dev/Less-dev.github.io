@@ -34,7 +34,7 @@ body {
 /* Personalización del scrollbar para navegadores WebKit (Chrome, Safari) */
 .box_index, .box {
   width: calc(100vw - 20px);
-  height: calc(100vh - 20px);
+  height: calc(100vh - 45px);
   padding: 20px;
   border-radius: 20px;
   border: 3.4px solid rgb(143, 12, 12);
